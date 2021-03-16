@@ -123,7 +123,6 @@ public class DHT_server_cosmos{
             JSONObject shoppingCart = new JSONObject();
             if (byteString.equals("")){
                 shoppingCart.put(newItem.get("item number"), newItem);
-
             }else {
                 JSONObject cart = (JSONObject) parser.parse(byteString);
                 long itemNumber = (long) newItem.get("item number");
@@ -172,7 +171,7 @@ public class DHT_server_cosmos{
             currentCart = specificEntity.getCart();
         }catch (Exception e)
         {
-            System.out.println("Customer does not exist!");
+            System.out.println("Customer Entity does not exist, but will add to table!");
         }
         return currentCart != null;
     }
@@ -293,7 +292,6 @@ public class DHT_server_cosmos{
         Iterator<String> keys = s.iterator();
 
         boolean itemExists = false;
-
         while(keys.hasNext()) {
             String key = keys.next();
             if (shoppingCart.get(key) instanceof JSONObject) {

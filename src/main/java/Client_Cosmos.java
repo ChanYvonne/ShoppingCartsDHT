@@ -8,8 +8,8 @@ import java.util.Set;
 public class Client_Cosmos {
     private DHT_server_cosmos shoppingCart;
 
-    public Client_Cosmos(){
-        shoppingCart = new DHT_server_cosmos();
+    public Client_Cosmos(DHT_server_cosmos server){
+        shoppingCart = server;
     }
 
     /**  Each time a web client clicks “buy” (on a book, or a pair of shoes, or a bag of Japanese Nori...), the web
